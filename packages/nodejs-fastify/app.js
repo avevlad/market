@@ -10,4 +10,4 @@ function init() {
   return app;
 }
 
-module.exports = init;
+module.exports = init();
