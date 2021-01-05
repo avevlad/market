@@ -1,6 +1,4 @@
-'use strict';
-
-import fastify from 'fastify';
+import fastify from "fastify";
 
 interface IQuerystring {
   name: string;
@@ -8,16 +6,16 @@ interface IQuerystring {
 
 function build() {
   const app = fastify({
-    logger: true
+    logger: true,
   });
 
-  app.get<{ Querystring: IQuerystring }>('/', async (req, res) => {
-    const { name = 'World' } = req.query;
+  app.get<{ Querystring: IQuerystring }>("/", async (req, res) => {
+    const { name = "World" } = req.query;
     // req.log.info({ name }, 'hello world!');
     return `Hello TS ${name}!`;
   });
-  app.get<{ Querystring: IQuerystring }>('/another/kek', async (req, res) => {
-    const { name = 'World' } = req.query;
+  app.get<{ Querystring: IQuerystring }>("/another/kek", async (req, res) => {
+    const { name = "World" } = req.query;
     // req.log.info({ name }, 'hello world!');
     return `Hello TS ${name}!`;
   });
