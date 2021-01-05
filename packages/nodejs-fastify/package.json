@@ -2,7 +2,7 @@
   "name": "nodejs-fastify",
   "version": "0.1.0",
   "description": "",
-  "main": "app.js",
+  "main": "app/index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "start": "node app.js",
