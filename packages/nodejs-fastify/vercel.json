@@ -2,22 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "app.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "static/**",
-      "use": "@vercel/static"
+      "src": "api/serverless.js",
+      "use": "@now/node",
+      "config": {
+        "helpers": false
+      }
     }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "app.js"
-    },
-    {
-      "src": "/(.+)",
-      "dest": "static/$1"
-    }
+    { "src": "/.*", "dest": "/api/serverless.js"}
   ]
 }
